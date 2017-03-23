@@ -115,13 +115,16 @@ make install
 echo "Copy File: cp ${TEMP_DIR}/bin/gifsicle ${BASE_DIR}/gifsicle"
 echo "Copy File: cp ${TEMP_DIR}/bin/gifdiff ${BASE_DIR}/gifdiff"
 
+cp ${TEMP_DIR}/bin/gifsicle ${BASE_DIR}/gifsicle
+cp ${TEMP_DIR}/bin/gifdiff ${BASE_DIR}/gifdiff
+
 if [ ! -f "${BASE_DIR}/gifsicle" ]; then
 	echo "** Failed to install giflossy **"
 	exit 1
 fi
 
 chmod +x ${BASE_DIR}/gifsicle
-
+chmod +x ${BASE_DIR}/gifdiff
 
 echo "Installed Done. Now clean up..."
 rm -rf ${TEMP_DIR}
